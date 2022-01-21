@@ -1,4 +1,4 @@
-module github.com/xpwu/go-tinyserver
+module github.com/xpwu/go-reqid
 
 go 1.16
 
