@@ -26,6 +26,11 @@ func WithCtx(parent context.Context) (ctx context.Context, id string) {
   }
 }
 
+func FromContext(ctx context.Context) (id string, ok bool) {
+  id, ok = ctx.Value(reqIDKey{}).(string)
+  return
+}
+
 func NewContext(parent context.Context, id string) context.Context {
   if value,ok := parent.Value(reqIDKey{}).(string); ok && value == id {
     return parent
